@@ -33,7 +33,7 @@ object testS3Spark  {
 
     // S3 Treatment
     scXData.sql("CREATE TEMPORARY TABLE "+nameTable+atributesTable+" USING com.databricks.spark.csv OPTIONS (path 's3n://"+AccessKey+":"+SecretAccessKey+"@"+bucket+"/"+file+"')")
-    scXData.sql("SELECT * FROM segmentacion").show()
+    scXData.sql("SELECT * FROM "+nameTable).show()
 
   }
 }
